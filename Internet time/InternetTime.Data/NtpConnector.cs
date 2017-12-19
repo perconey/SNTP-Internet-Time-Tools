@@ -7,7 +7,11 @@ using Rebex.Net;
 
 namespace InternetTime.Data
 {
-    public class Data
+    static class NtpConnector
     {
+        static NtpConnector()
+        {
+            Ntp connectedNtp = new Ntp(ServerChooser.FinalServerAddress);
+        }
     }
 }
