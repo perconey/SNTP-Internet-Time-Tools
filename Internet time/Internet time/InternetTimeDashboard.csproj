@@ -94,5 +94,18 @@
   <ItemGroup>
     <Resource Include="time.png" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InternetTime.BusinessLogic\InternetTime.BusinessLogic.csproj">
+      <Project>{f6115728-4848-4325-b027-07e500f9f5a0}</Project>
+      <Name>InternetTime.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InternetTime.Data\InternetTime.Data.csproj">
+      <Project>{250d5947-5d8e-4647-a444-c49662c4f561}</Project>
+      <Name>InternetTime.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
