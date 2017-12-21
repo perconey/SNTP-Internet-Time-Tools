@@ -23,6 +23,7 @@ namespace InternetTime
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

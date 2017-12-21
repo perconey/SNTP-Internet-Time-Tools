@@ -11,6 +11,7 @@ namespace InternetTime.ViewModel
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
+        private string selectedServerAddress;
         public MainWindowViewModel()
         {
 
@@ -20,6 +21,13 @@ namespace InternetTime.ViewModel
         {
             get { return ServerChooser.Servers; }
         }
+
+        public String SelectedServerAddress
+        {
+            get { return selectedServerAddress; }
+            set { selectedServerAddress = value; MessageBox.Show(selectedServerAddress); NotifyPropertyChanged("SelectedServerAddress"); }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged(string propertyName)
