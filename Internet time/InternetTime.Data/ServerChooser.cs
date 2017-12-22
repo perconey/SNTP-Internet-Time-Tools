@@ -16,8 +16,21 @@ namespace InternetTime.Data
         private static StringBuilder _serverAddress = new StringBuilder();
 
         public static  StringBuilder ServerAdress { get => _serverAddress; set => _serverAddress = value; }
+        
+        private static string _finalServerAddress;
 
-        public static string FinalServerAddress;
+        public static string FinalServerAddress
+        {
+            get
+            {
+                return _finalServerAddress;
+            }
+            set
+            {
+                _finalServerAddress = value;
+                NtpConnector.ConnectByAddress(_finalServerAddress);
+            }
+        }
 
 
     }

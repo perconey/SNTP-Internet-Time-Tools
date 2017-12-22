@@ -25,7 +25,12 @@ namespace InternetTime.ViewModel
         public String SelectedServerAddress
         {
             get { return selectedServerAddress; }
-            set { selectedServerAddress = value; MessageBox.Show(selectedServerAddress); NotifyPropertyChanged("SelectedServerAddress"); }
+            set
+            {
+                selectedServerAddress = value;
+                NotifyPropertyChanged("SelectedServerAddress");
+                ServerChooser.FinalServerAddress = selectedServerAddress;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
