@@ -14,7 +14,9 @@
         <Image Margin="-20,-20,513,270" Source="/InternetTime;component/time.png" Stretch="Fill"/>
         <ComboBox Name="ServerChoosingComboBox" HorizontalAlignment="Left" Height="28" Margin="127,30,0,0" VerticalAlignment="Top" Width="127" ItemsSource="{Binding ServerAddresses}" SelectedValue="{Binding SelectedServerAddress, Mode=TwoWay}" SelectedValuePath="{Binding SelectedServerAddress}" >
         </ComboBox>
-        <Label Content="Server address:" HorizontalAlignment="Left" Margin="127,4,0,0" VerticalAlignment="Top"/>
+        <Label Content="Server address:" HorizontalAlignment="Left" Margin="124,6,0,0" VerticalAlignment="Top"/>
+        <Button Content="Synchronize" HorizontalAlignment="Left" Height="40" Margin="10,350,0,0" VerticalAlignment="Top" Width="120"/>
+        <Image Margin="121,343,500,35" Source="/InternetTime;component/leanpub_info-circle.png" Stretch="Fill"/>
 
     </Grid>
 </Window>

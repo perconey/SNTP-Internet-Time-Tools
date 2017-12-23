@@ -21,7 +21,7 @@ namespace InternetTime.ViewModel
         {
             get { return ServerChooser.Servers; }
         }
-
+        RelayCommand
         public String SelectedServerAddress
         {
             get { return selectedServerAddress; }
