@@ -16,9 +16,9 @@
         <ComboBox Name="ServerChoosingComboBox" HorizontalAlignment="Left" Height="28" Margin="127,30,0,0" VerticalAlignment="Top" Width="127" ItemsSource="{Binding ServerAddresses}" SelectedValue="{Binding SelectedServerAddress, Mode=TwoWay}" SelectedValuePath="{Binding SelectedServerAddress}" >
         </ComboBox>
         <Label Content="Server address:" HorizontalAlignment="Left" Margin="124,6,0,0" VerticalAlignment="Top"/>
-        <Button Content="Synchronize" HorizontalAlignment="Left" Height="40" Margin="10,350,0,0" VerticalAlignment="Top" Width="120"/>
-        <Image Margin="121,343,500,35" Source="/InternetTime;component/leanpub_info-circle.png" Stretch="Fill"/>
-        <Button Command="{Binding MouseOverCommand}" HorizontalAlignment="Left" Margin="124,346,0,0" VerticalAlignment="Top" Width="16" Height="16" Opacity="0">
+        <Button Content="Synchronize" HorizontalAlignment="Left" Height="40" Margin="10,341,0,0" VerticalAlignment="Top" Width="120"/>
+        <Image Margin="112,328,491,31" Source="/InternetTime;component/leanpub_info-circle.png" Stretch="Fill"/>
+        <Button Command="{Binding MouseOverCommand}" HorizontalAlignment="Left" Margin="118,331,0,0" VerticalAlignment="Top" Width="29" Height="28" Opacity="0">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseMove">
                     <i:InvokeCommandAction Command="{Binding MouseOverCommand}"/>
