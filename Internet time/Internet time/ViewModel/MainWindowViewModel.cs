@@ -6,22 +6,25 @@ using System.Text;
 using System.Threading.Tasks;
 using InternetTime.Data;
 using System.Windows;
+using System.Windows.Input;
 
 namespace InternetTime.ViewModel
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
+        public ICommand MouseOverCommand { get; set; }
         private string selectedServerAddress;
+ 
         public MainWindowViewModel()
         {
-
+            MouseOverCommand = new RelayCommand(o => { MessageBox.Show("Hover"); }, o => true);
         }
         
         public List<String> ServerAddresses
         {
             get { return ServerChooser.Servers; }
         }
-        RelayCommand
+        
         public String SelectedServerAddress
         {
             get { return selectedServerAddress; }
