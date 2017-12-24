@@ -13,11 +13,25 @@ namespace InternetTime.ViewModel
     class MainWindowViewModel : INotifyPropertyChanged
     {
         public ICommand MouseOverCommand { get; set; }
+        public ICommand SynchronizeButtonClick { get; set; }
+
         private string selectedServerAddress;
  
         public MainWindowViewModel()
         {
-            MouseOverCommand = new RelayCommand(o => { MessageBox.Show("Hover"); }, o => true);
+            MouseOverCommand = new RelayCommand(OnInfoCircleHover, o => true);
+            SynchronizeButtonClick = new RelayCommand(OnSynchronizeClick, o => true);
+        }
+
+        public void OnInfoCircleHover(object o)
+        {
+            MessageBox.Show("Synchronizes your local system clock with one on server yo selected in \"Choose Server\"");
+        }
+
+        public void OnSynchronizeClick(object o)
+        {
+            MessageBox.Show("Jobs done");
+            NtpConnector.SynchronizeOnCurrentServer();
         }
         
         public List<String> ServerAddresses

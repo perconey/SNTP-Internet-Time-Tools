@@ -47,5 +47,17 @@ namespace InternetTime.Data
             }
 
         }
+
+        public static void SynchronizeOnCurrentServer()
+        {
+            try
+            {
+                connectedNtpServer.SynchronizeSystemClock();
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Hola Hola Amigo, which server do you want to use for synchronization");
+            }
+        }
+
     }
 }

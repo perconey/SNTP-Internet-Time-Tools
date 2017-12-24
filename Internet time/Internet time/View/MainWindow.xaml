@@ -16,7 +16,7 @@
         <ComboBox Name="ServerChoosingComboBox" HorizontalAlignment="Left" Height="28" Margin="127,30,0,0" VerticalAlignment="Top" Width="127" ItemsSource="{Binding ServerAddresses}" SelectedValue="{Binding SelectedServerAddress, Mode=TwoWay}" SelectedValuePath="{Binding SelectedServerAddress}" >
         </ComboBox>
         <Label Content="Server address:" HorizontalAlignment="Left" Margin="124,6,0,0" VerticalAlignment="Top"/>
-        <Button Content="Synchronize" HorizontalAlignment="Left" Height="40" Margin="10,341,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Command="{Binding SynchronizeButtonClick}" Content="Synchronize" HorizontalAlignment="Left" Height="40" Margin="10,341,0,0" VerticalAlignment="Top" Width="120"/>
         <Image Margin="112,328,491,31" Source="/InternetTime;component/leanpub_info-circle.png" Stretch="Fill"/>
         <Button Command="{Binding MouseOverCommand}" HorizontalAlignment="Left" Margin="118,331,0,0" VerticalAlignment="Top" Width="29" Height="28" Opacity="0">
             <i:Interaction.Triggers>
