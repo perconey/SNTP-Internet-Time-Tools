@@ -16,6 +16,7 @@ namespace InternetTime.ViewModel
         public ICommand SynchronizeButtonClick { get; set; }
 
         private string selectedServerAddress;
+        private string protocolVersion;
  
         public MainWindowViewModel()
         {
@@ -30,8 +31,14 @@ namespace InternetTime.ViewModel
 
         public void OnSynchronizeClick(object o)
         {
-            MessageBox.Show("Jobs done");
+            MessageBox.Show("System clock synchronized!");
             NtpConnector.SynchronizeOnCurrentServer();
+        }
+
+        public void OnConnectionEstablished()
+        {
+            ServerChooser.FinalServerAddress = selectedServerAddress;
+            ProtocolVersion = NtpConnector.GetProtocolVersion();
         }
         
         public List<String> ServerAddresses
@@ -46,7 +53,17 @@ namespace InternetTime.ViewModel
             {
                 selectedServerAddress = value;
                 NotifyPropertyChanged("SelectedServerAddress");
-                ServerChooser.FinalServerAddress = selectedServerAddress;
+                OnConnectionEstablished();
+            }
+        }
+
+        public String ProtocolVersion
+        {
+            get { return protocolVersion;  }
+            set
+            {
+                protocolVersion = value;
+                NotifyPropertyChanged("ProtocolVersion");
             }
         }
 
@@ -58,3 +75,4 @@ namespace InternetTime.ViewModel
         }
     }
 }
+//nice try mati

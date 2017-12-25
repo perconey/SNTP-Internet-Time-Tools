@@ -25,6 +25,7 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
+        <Label Content="{Binding ProtocolVersion}" HorizontalAlignment="Left" Height="30" Margin="516,362,0,0" VerticalAlignment="Top" Width="109"/>
 
 
     </Grid>

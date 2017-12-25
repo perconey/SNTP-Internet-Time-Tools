@@ -47,7 +47,7 @@ namespace InternetTime.Data
             }
 
         }
-
+        
         public static void SynchronizeOnCurrentServer()
         {
             try
@@ -57,6 +57,11 @@ namespace InternetTime.Data
             {
                 MessageBox.Show("Hola Hola Amigo, which server do you want to use for synchronization");
             }
+        }
+
+        public static string GetProtocolVersion()
+        {
+            return $"Protocol version: {connectedNtpServer.VersionNumber}";
         }
 
     }
