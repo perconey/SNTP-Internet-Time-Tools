@@ -26,6 +26,17 @@
             </i:Interaction.Triggers>
         </Button>
         <Label Content="{Binding ProtocolVersion}" HorizontalAlignment="Left" Height="30" Margin="516,362,0,0" VerticalAlignment="Top" Width="109"/>
+        <StackPanel HorizontalAlignment="Left" Height="210" Margin="22,105,0,0" VerticalAlignment="Top" Width="378">
+            <Border BorderThickness="1" BorderBrush="Black" Background="#FFF3F3F3" >
+                <StackPanel VerticalAlignment="Center">
+                    <Label  Height="35" Content="test" Margin="0,5,0,0" />
+                </StackPanel>
+            </Border>
+            <Label Content=""/>
+            <Label Content=""/>
+            <Label Content=""/>
+
+        </StackPanel>
 
 
     </Grid>

@@ -24,21 +24,35 @@ namespace InternetTime.ViewModel
             SynchronizeButtonClick = new RelayCommand(OnSynchronizeClick, o => true);
         }
 
+        /// <summary>
+        /// Info popup when you hover over black circle
+        /// </summary>
         public void OnInfoCircleHover(object o)
         {
             MessageBox.Show("Synchronizes your local system clock with one on server yo selected in \"Choose Server\"");
         }
 
+        /// <summary>
+        /// Synchronizes system clock when you click on Synchronize button
+        /// </summary>
         public void OnSynchronizeClick(object o)
         {
+            if(NtpConnector.isConnected)
             MessageBox.Show("System clock synchronized!");
             NtpConnector.SynchronizeOnCurrentServer();
         }
 
-        public void OnConnectionEstablished()
+        /// <summary>
+        /// All the thing that happen when you choose server to connect
+        /// </summary>
+        public void OnConnectionAttempt()
         {
             ServerChooser.FinalServerAddress = selectedServerAddress;
-            ProtocolVersion = NtpConnector.GetProtocolVersion();
+            if(NtpConnector.isConnected)
+            {
+                ProtocolVersion = NtpConnector.GetProtocolVersion();
+
+            }
         }
         
         public List<String> ServerAddresses
@@ -53,7 +67,7 @@ namespace InternetTime.ViewModel
             {
                 selectedServerAddress = value;
                 NotifyPropertyChanged("SelectedServerAddress");
-                OnConnectionEstablished();
+                OnConnectionAttempt();
             }
         }
 
