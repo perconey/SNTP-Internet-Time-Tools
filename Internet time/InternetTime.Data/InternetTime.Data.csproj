@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NtpConnectionInfo.cs" />
     <Compile Include="NtpConnector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerChooser.cs" />

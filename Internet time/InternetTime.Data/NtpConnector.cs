@@ -64,5 +64,22 @@ namespace InternetTime.Data
             return $"Protocol version: {connectedNtpServer.VersionNumber}";
         }
 
+        public static List<string> GetCurrentConnectedServerInfo()
+        {
+            List<string> info = new List<string>();
+            NtpResponse response = connectedNtpServer.GetTime();
+            NtpPacket packet = response.Packet;
+
+            info.Add(packet.OriginateTimestamp.ToString());
+            info.Add(packet.DestinationTimestamp.ToString());
+
+            info.Add(packet.Stratum.ToString());
+            info.Add(packet.VersionNumber.ToString());
+
+            info.Add(packet.ReceiveTimestamp.ToString());
+            info.Add(packet.TransmitTimestamp.ToString());
+
+            return info;
+        }
     }
 }
