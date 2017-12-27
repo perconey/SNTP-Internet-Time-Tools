@@ -29,7 +29,7 @@ namespace InternetTime.ViewModel
         /// </summary>
         public void OnInfoCircleHover(object o)
         {
-            MessageBox.Show("Synchronizes your local system clock with one on server yo selected in \"Choose Server\"");
+            MessageBox.Show("Synchronizes your local system clock with one on server yo selected in \"Select server\"");
         }
 
         /// <summary>

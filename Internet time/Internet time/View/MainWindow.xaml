@@ -6,35 +6,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodel="clr-namespace:InternetTime.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="429" Width="649" ResizeMode="NoResize"
+        Title="MainWindow" Height="394" Width="649" ResizeMode="NoResize"
         >
     <Window.DataContext>
         <viewmodel:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <Image Margin="-20,-20,513,270" Source="/InternetTime;component/time.png" Stretch="Fill"/>
+        <Image Margin="-20,-20,513,0" Source="/InternetTime;component/time.png"  Height="150" VerticalAlignment="Top"/>
         <ComboBox Name="ServerChoosingComboBox" HorizontalAlignment="Left" Height="28" Margin="127,30,0,0" VerticalAlignment="Top" Width="127" ItemsSource="{Binding ServerAddresses}" SelectedValue="{Binding SelectedServerAddress, Mode=TwoWay}" SelectedValuePath="{Binding SelectedServerAddress}" >
         </ComboBox>
         <Label Content="Server address:" HorizontalAlignment="Left" Margin="124,6,0,0" VerticalAlignment="Top"/>
-        <Button Command="{Binding SynchronizeButtonClick}" Content="Synchronize" HorizontalAlignment="Left" Height="40" Margin="10,341,0,0" VerticalAlignment="Top" Width="120"/>
-        <Image Margin="112,328,491,31" Source="/InternetTime;component/leanpub_info-circle.png" Stretch="Fill"/>
-        <Button Command="{Binding MouseOverCommand}" HorizontalAlignment="Left" Margin="118,331,0,0" VerticalAlignment="Top" Width="29" Height="28" Opacity="0">
+        <Button Command="{Binding SynchronizeButtonClick}" Content="Synchronize" HorizontalAlignment="Left" Height="40" Margin="10,300,0,0" VerticalAlignment="Top" Width="120"/>
+        <Image Margin="112,288,491,0" Source="/InternetTime;component/leanpub_info-circle.png" Height="40" VerticalAlignment="Top"/>
+        <Button Command="{Binding MouseOverCommand}" HorizontalAlignment="Left" Margin="118,290,0,0" VerticalAlignment="Top" Width="29" Height="28" Opacity="0">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseMove">
                     <i:InvokeCommandAction Command="{Binding MouseOverCommand}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
-        <Label Content="{Binding ProtocolVersion}" HorizontalAlignment="Left" Height="30" Margin="516,362,0,0" VerticalAlignment="Top" Width="109"/>
-        <StackPanel HorizontalAlignment="Left" Height="210" Margin="22,105,0,0" VerticalAlignment="Top" Width="378">
-            <Border BorderThickness="1" BorderBrush="Black" Background="#FFF3F3F3" >
+        <Label Content="{Binding ProtocolVersion}" HorizontalAlignment="Left" Height="30" Margin="516,320,0,0" VerticalAlignment="Top" Width="109"/>
+        
+        <StackPanel HorizontalAlignment="Left" Height="150" Margin="22,105,0,0" VerticalAlignment="Top" Width="378">
+            <Border BorderThickness="1">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="Black" Opacity="0.25"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="#FFF3F3F3" Opacity="0.45"/>
+                </Border.Background>
                 <StackPanel VerticalAlignment="Center">
                     <Label  Height="35" Content="test" Margin="0,5,0,0" />
+                    <Label Content=""/>
+                    <Label Content=""/>
+                    <Label Content=""/>
                 </StackPanel>
             </Border>
-            <Label Content=""/>
-            <Label Content=""/>
-            <Label Content=""/>
 
         </StackPanel>
 
