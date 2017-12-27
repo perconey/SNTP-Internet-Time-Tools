@@ -26,24 +26,22 @@
             </i:Interaction.Triggers>
         </Button>
         <Label Content="{Binding ProtocolVersion}" HorizontalAlignment="Left" Height="30" Margin="516,320,0,0" VerticalAlignment="Top" Width="109"/>
-        
-        <StackPanel HorizontalAlignment="Left" Height="150" Margin="22,105,0,0" VerticalAlignment="Top" Width="378">
-            <Border BorderThickness="1">
-                <Border.BorderBrush>
-                    <SolidColorBrush Color="Black" Opacity="0.25"/>
-                </Border.BorderBrush>
-                <Border.Background>
-                    <SolidColorBrush Color="#FFF3F3F3" Opacity="0.45"/>
-                </Border.Background>
-                <StackPanel VerticalAlignment="Center">
-                    <Label  Height="35" Content="test" Margin="0,5,0,0" />
-                    <Label Content=""/>
-                    <Label Content=""/>
-                    <Label Content=""/>
-                </StackPanel>
-            </Border>
 
-        </StackPanel>
+        <Border Height="159" Width="613" BorderThickness="1" HorizontalAlignment="Left" Margin="20,110,0,96" >
+            <Border.BorderBrush>
+                <SolidColorBrush Color="Black" Opacity="0.15"/>
+            </Border.BorderBrush>
+            <Border.Background>
+                <SolidColorBrush Color="#FFF3F3F3" Opacity="0.45"/>
+            </Border.Background>
+            <StackPanel HorizontalAlignment="Left" Height="141" Width="610"  VerticalAlignment="Top" Margin="4,9,-11,0" >
+
+                <Label Height="37.5" Content="{Binding ConnectedServerInfos[0] }" Padding="10"/>
+                <Label Height="37.5" Content="{Binding ConnectedServerInfos[1] }" Padding="10"/>
+                <Label Height="37.5" Content="{Binding ConnectedServerInfos[2] }" Padding="10"/>
+
+            </StackPanel>
+        </Border>
 
 
     </Grid>

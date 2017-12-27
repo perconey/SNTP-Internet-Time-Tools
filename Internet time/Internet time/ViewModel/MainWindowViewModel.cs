@@ -15,6 +15,17 @@ namespace InternetTime.ViewModel
         public ICommand MouseOverCommand { get; set; }
         public ICommand SynchronizeButtonClick { get; set; }
 
+        private List<string> _connectedServerInfos;
+        public List<string> ConnectedServerInfos
+        {
+            get => _connectedServerInfos;
+            set
+            {
+                _connectedServerInfos = value;
+                NotifyPropertyChanged("ConnectedServerInfos");
+            }
+        }
+
         private string selectedServerAddress;
         private string protocolVersion;
  
@@ -48,10 +59,11 @@ namespace InternetTime.ViewModel
         public void OnConnectionAttempt()
         {
             ServerChooser.FinalServerAddress = selectedServerAddress;
+
             if(NtpConnector.isConnected)
             {
                 ProtocolVersion = NtpConnector.GetProtocolVersion();
-
+                ConnectedServerInfos = NtpConnector.GetCurrentConnectedServerInfo();
             }
         }
         
@@ -80,6 +92,7 @@ namespace InternetTime.ViewModel
                 NotifyPropertyChanged("ProtocolVersion");
             }
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

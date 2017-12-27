@@ -12,10 +12,6 @@ namespace InternetTime.Data
         {
             "pl.pool.ntp.org","de.pool.ntp.org","by.pool.ntp.org","fr.pool.ntp.org"
         };
-
-        private static StringBuilder _serverAddress = new StringBuilder();
-
-        public static  StringBuilder ServerAdress { get => _serverAddress; set => _serverAddress = value; }
         
         private static string _finalServerAddress;
 
