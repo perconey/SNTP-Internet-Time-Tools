@@ -95,7 +95,7 @@ namespace InternetTime.Data
                 s2 = packet.TransmitTimestamp.ToUniversalTime().ToLongTimeString() + ":" + packet.TransmitTimestamp.Microsecond;
 
                 info.Add($"Request sent at: {l1} UTC" +
-                    $" local time and received its response at {l2} UTC");
+                    $" and received response at {l2} UTC");
                 info.Add($"Currently connected server ({ServerChooser.FinalServerAddress}) has stratum {packet.Stratum} and runs NTP version {packet.VersionNumber.ToString()}");
                 info.Add($"Choosed server received our request at {s1} UTC and sent response at {s2} UTC");
 
