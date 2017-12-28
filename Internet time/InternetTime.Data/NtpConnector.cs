@@ -87,16 +87,16 @@ namespace InternetTime.Data
                 NtpResponse response = connectedNtpServer.GetTime();
                 NtpPacket packet = response.Packet;
                 string l1, l2, s1, s2;
-                //zrob dokladniejsza reprezentacje danych w info oraz opoznienia
-                l1 = "to do";
-                l2 = "to do";
+                
+                l1 = packet.OriginateTimestamp.ToString() + ":" + packet.OriginateTimestamp.Microsecond.ToString();
+                l2 = packet.DestinationTimestamp.ToUniversalTime().ToString() + ":" + packet.OriginateTimestamp.Microsecond.ToString();
 
                 s1 = packet.ReceiveTimestamp.ToUniversalTime().ToLongTimeString() + ":" + packet.ReceiveTimestamp.Microsecond;
                 s2 = packet.TransmitTimestamp.ToUniversalTime().ToLongTimeString() + ":" + packet.TransmitTimestamp.Microsecond;
 
-                info.Add($"Request sent at: {packet.OriginateTimestamp.ToString()} UTC" +
-                    $" local time and received its response at {packet.DestinationTimestamp.ToString()} UTC");
-                info.Add($"Currently connected server ({ServerChooser.FinalServerAddress}) has stratum {packet.Stratum} and runs NTP version {packet.VersionNumber}");
+                info.Add($"Request sent at: {l1} UTC" +
+                    $" local time and received its response at {l2} UTC");
+                info.Add($"Currently connected server ({ServerChooser.FinalServerAddress}) has stratum {packet.Stratum} and runs NTP version {packet.VersionNumber.ToString()}");
                 info.Add($"Choosed server received our request at {s1} UTC and sent response at {s2} UTC");
 
                 return info;
