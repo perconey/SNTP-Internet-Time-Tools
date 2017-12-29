@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodel="clr-namespace:InternetTime.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="394" Width="649" ResizeMode="NoResize"
+        Title="SNTP Protocol Time Tools" Height="394" Width="649" ResizeMode="NoResize"
         >
     <Window.DataContext>
         <viewmodel:MainWindowViewModel/>
@@ -27,7 +27,7 @@
         </Button>
         <Label Content="{Binding ProtocolVersion}" HorizontalAlignment="Left" Height="30" Margin="516,320,0,0" VerticalAlignment="Top" Width="109"/>
 
-        <Border Height="159" Width="613" BorderThickness="1" HorizontalAlignment="Left" Margin="15,110,0,96" >
+        <Border Width="613" BorderThickness="1" HorizontalAlignment="Left" Margin="11,114,0,82" >
             <Border.BorderBrush>
                 <SolidColorBrush Color="Black" Opacity="0.15"/>
             </Border.BorderBrush>
