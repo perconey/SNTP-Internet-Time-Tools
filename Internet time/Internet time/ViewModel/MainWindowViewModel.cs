@@ -28,6 +28,7 @@ namespace InternetTime.ViewModel
 
         private string selectedServerAddress;
         private string protocolVersion;
+        private string synchronizationTips = "Click Synchronize to see more details!";
  
         public MainWindowViewModel()
         {
@@ -51,6 +52,7 @@ namespace InternetTime.ViewModel
             if(NtpConnector.isConnected)
             MessageBox.Show("System clock synchronized!");
             NtpConnector.SynchronizeOnCurrentServer();
+            SynchronizationTips = NtpConnector.RetrieveSynchronizationInfo();
         }
 
         /// <summary>
@@ -93,6 +95,15 @@ namespace InternetTime.ViewModel
             }
         }
 
+        public string SynchronizationTips
+        {
+            get => synchronizationTips;
+            set
+            {
+                synchronizationTips = value;
+                NotifyPropertyChanged("SynchronizationTips");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

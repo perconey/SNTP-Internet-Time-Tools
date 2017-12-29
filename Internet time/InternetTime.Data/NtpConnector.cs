@@ -63,7 +63,7 @@ namespace InternetTime.Data
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Hola Hola Amigo, which server do you want to use for synchronization");
+                MessageBox.Show("Hola Hola Amigo, choose server before clicking Synchronize!");
                 isConnected = false;
             }
         }
@@ -76,6 +76,19 @@ namespace InternetTime.Data
             }catch(Exception ex)
             {
                 return "Error";
+            }
+        }
+
+        public static string RetrieveSynchronizationInfo()
+        {
+            try
+            {
+            NtpResponse response = NtpConnector.connectedNtpServer.GetTime();
+
+            return $"Moved local time by {response.TimeOffset.ToTimeSpan()}";
+            }catch(Exception ex)
+            {
+                return "Click Synchronize to see more details!";
             }
         }
 

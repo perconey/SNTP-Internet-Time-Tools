@@ -43,6 +43,16 @@
             </StackPanel>
         </Border>
 
+        <Border BorderThickness="1" Margin="157,300,132,25">
+            <Border.BorderBrush>
+                <SolidColorBrush Color="Black" Opacity="0.15"/>
+            </Border.BorderBrush>
+            <Border.Background>
+                <SolidColorBrush Color="#FFF3F3F3" Opacity="0.45"/>
+            </Border.Background>
+            <Label Content="{Binding SynchronizationTips}"/>
+        </Border>
+
 
     </Grid>
 </Window>
