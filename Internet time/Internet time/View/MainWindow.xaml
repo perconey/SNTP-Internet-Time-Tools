@@ -52,6 +52,7 @@
             </Border.Background>
             <Label Content="{Binding SynchronizationTips}" VerticalAlignment="Center"/>
         </Border>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="280,30,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="141"/>
 
 
     </Grid>
