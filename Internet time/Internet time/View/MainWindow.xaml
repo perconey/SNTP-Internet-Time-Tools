@@ -52,7 +52,9 @@
             </Border.Background>
             <Label Content="{Binding SynchronizationTips}" VerticalAlignment="Center"/>
         </Border>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="280,30,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="141"/>
+        <TextBox Padding="3,3,0,0" HorizontalAlignment="Left" Height="24" Margin="272,32,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="141" MaxLines="1" CharacterCasing="Lower"/>
+        <Button Content="Connect" HorizontalAlignment="Left" Margin="424,34,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Enter address:" HorizontalAlignment="Left" Margin="272,6,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
