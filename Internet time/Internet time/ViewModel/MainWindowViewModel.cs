@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using InternetTime.Data;
 using System.Windows;
 using System.Windows.Input;
@@ -14,6 +11,7 @@ namespace InternetTime.ViewModel
     {
         public ICommand MouseOverCommand { get; set; }
         public ICommand SynchronizeButtonClick { get; set; }
+        public ICommand ConnectButtonClick { get; set; }
 
         private List<string> _connectedServerInfos;
         public List<string> ConnectedServerInfos
@@ -29,11 +27,25 @@ namespace InternetTime.ViewModel
         private string selectedServerAddress;
         private string protocolVersion;
         private string synchronizationTips = "Click Synchronize to see more details!";
- 
+        private string _userTypedServerAddress;
+
+
         public MainWindowViewModel()
         {
             MouseOverCommand = new RelayCommand(OnInfoCircleHover, o => true);
             SynchronizeButtonClick = new RelayCommand(OnSynchronizeClick, o => true);
+            ConnectButtonClick = new RelayCommand(OnConnectButtonClick, o => true);
+        }
+
+        private void OnConnectButtonClick(object obj)
+        {
+            ServerChooser.FinalServerAddress = UserTypedServerAddress;
+
+            if (NtpConnector.isConnected)
+            {
+                ProtocolVersion = NtpConnector.GetProtocolVersion();
+                ConnectedServerInfos = NtpConnector.GetCurrentConnectedServerInfo();
+            }
         }
 
         /// <summary>
@@ -103,6 +115,12 @@ namespace InternetTime.ViewModel
                 synchronizationTips = value;
                 NotifyPropertyChanged("SynchronizationTips");
             }
+        }
+
+        public string UserTypedServerAddress
+        {
+            get => _userTypedServerAddress;
+            set => _userTypedServerAddress = value;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
